@@ -1,0 +1,11 @@
+<h1>Registered Students</h1>
+<a href="{% url 'student_create' %}">Register Student</a>
+<ul>
+  {% for student in students %}
+    <li>
+      {{ student.student_name }} - {{ student.program }} - Year {{ student.year_level }} - {{ student.email }}
+      <a href="{% url 'student_update' student.pk %}">Edit</a>
+      <a href="{% url 'student_delete' student.pk %}">Delete</a>
+    </li>
+  {% endfor %}
+</ul>
